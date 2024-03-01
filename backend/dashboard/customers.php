@@ -1,82 +1,78 @@
-
 <main id="" class="main">
 
-    <div class="pagetitle">
-      <h1>General Tables</h1>
-    </div><!-- End Page Title -->
+  <div class="pagetitle">
+    <h1>General Tables</h1>
+  </div><!-- End Page Title -->
 
-    <section class="section">
-      <div class="col-lg-12">
-        <div class="card">
-          <div class="card-body">
-            <div class="card-header">
-              <div class="card-tools" style="float: right; margin-top: -2%;">
-                <a class="btn btn-block btn-sm btn-default btn-flat border-primary new_bike"
-                  href="?page=create"><i class="bi bi-plus"></i> Add New</a>
-              </div>
+  <section class="section">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-header">
+            <div class="card-tools" style="float: right; margin-top: -2%;">
+              <a class="btn btn-block btn-sm btn-default btn-flat border-primary new_bike" href="?page=create"><i class="bi bi-plus"></i> Add New</a>
             </div>
-            
-            <div class="datatable-top">
-              <div class="datatable-dropdown">
-                <label>
-                  <select class="datatable-selector">
-                    <option value="5">5</option>
-                    <option value="10" selected="">10</option>
-                    <option value="15">15</option>
-                    <option value="-1">All</option>
-                  </select> entries per page
-                </label>
-              </div>
-              <div class="datatable-search">
-                <input class="datatable-input" placeholder="Search..." type="search" title="Search within table">
-              </div>
+          </div>
+
+          <div class="datatable-top">
+            <div class="datatable-dropdown">
+              <label>
+                <select class="datatable-selector">
+                  <option value="5">5</option>
+                  <option value="10" selected="">10</option>
+                  <option value="15">15</option>
+                  <option value="-1">All</option>
+                </select> entries per page
+              </label>
             </div>
+            <div class="datatable-search">
+              <input class="datatable-input" placeholder="Search..." type="search" title="Search within table">
+            </div>
+          </div>
 
 
-            <!-- table -->
-            <table class="table table-bordered border-primary">
-              <thead>
+          <!-- table -->
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">National ID</th>
+                <th scope="col">Phone NUmber</th>
+                <th scope="col">District</th>
+                <th scope="col">Sector</th>
+                <th scope="col">Cell</th>
+                <th scope="col">Village</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach ($customers as $customer) : ?>
+
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">National ID</th>
-                  <th scope="col">Phone NUmber</th>
-                  <th scope="col">District</th>
-                  <th scope="col">Sector</th>
-                  <th scope="col">Cell</th>
-                  <th scope="col">Village</th>
-                  <th scope="col">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>001</td>
-                  <td>Chris Fred</td>
-                  <td>1234567890123456</td>
-                  <td>1234567890</td>
-                  <td>RUSIZI</td>
-                  <td>Gitambi</td>
-                  <td>Mashesha</td>
-                  
-                  
+                  <th scope="row"><?= $customer['id']; ?></th>
+                  <td><?= $customer['name']; ?></td>
+                  <td><?= $customer['national_id']; ?></td>
+                  <td><?= $customer['phone_number']; ?></td>
+                  <td><?= $customer['district']; ?></td>
+                  <td><?= $customer['sector']; ?></td>
+                  <td><?= $customer['cell']; ?></td>
+                  <td><?= $customer['village']; ?></td>
+
                   <td>
 
                     <div class="btn-group">
-                      <a href="javascript:void(0)" data-id="SU 568707"
-                        class="btn btn-primary btn-flat btn-sm print_bike ">
+                      <a href="javascript:void(0)" data-id="SU 568707" class="btn btn-primary btn-flat btn-sm print_bike ">
                         <i class="bi bi-print"></i>
                       </a>
-                      <a href="javascript:void(0)" data-id="SU 568707"
-                        class="btn btn-primary btn-flat btn-sm bike_receipt ">
+                      <a href="javascript:void(0)" data-id="SU 568707" class="btn btn-primary btn-flat btn-sm bike_receipt ">
                         <i class="bi bi-receipt"></i>
                       </a>
 
                       <a href="javascript:void(0)" data-id="SU 568707" class="btn btn-primary btn-flat btn-sm mutate">
                         <i class="bi bi-bicycle"></i>
                       </a>
-                      <a href="javascript:void(0)" data-id="1199380172402010"
-                        class="btn btn-primary btn-flat btn-sm view_owner">
+                      <a href="javascript:void(0)" data-id="1199380172402010" class="btn btn-primary btn-flat btn-sm view_owner">
                         <i class="bi bi-eye"></i>
                       </a>
                       <a href="?page=edit" data-id="51" class="btn btn-primary btn-flat btn-sm manage_bike">
@@ -88,13 +84,14 @@
                     </div>
                   </td>
                 </tr>
+              <?php endforeach; ?>
 
-              </tbody>
-            </table>
+            </tbody>
+          </table>
 
-            <!-- pagination -->
+          <!-- pagination -->
 
-            <!-- <div class="datatable-bottom">
+          <!-- <div class="datatable-bottom">
               <div class="datatable-info">Showing 1 to 10 of 100 entries</div>
               <nav class="datatable-pagination">
                 <ul class="datatable-pagination-list">
@@ -124,16 +121,16 @@
               </nav>
             </div> -->
 
-          </div>
         </div>
-
       </div>
-      </div>
-    </section>
 
-  </main><!-- End #main -->
+    </div>
+    </div>
+  </section>
+
+</main><!-- End #main -->
 
 
 
-  
+
 </html>

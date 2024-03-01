@@ -1,3 +1,6 @@
+<?php include '../controllers/bikes.php'; ?>
+
+
 <section class="content" id="editModal">
       <div class="container-fluid">
         <style>
@@ -12,7 +15,7 @@
               <h5 class="card-title">Create Bike</h5>
             </div>
             <div class="card-body">
-              <form id="bike">
+              <form id="bike"  method="post" action="?create">
                 <div class="row">
                   <input type="hidden" name="id" value="">
                   <input type="hidden" name="agent_username" value="Christella">
@@ -24,7 +27,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text"><i class="bi bi-phone"></i></span>
                         </div>
-                        <input type="text" name="bike_name" class="form-control" value="">
+                        <input type="text" name="name" class="form-control" value="">
                       </div>
                     </div>
 
@@ -43,7 +46,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text"><i class="bi bi-facebook"></i></span>
                         </div>
-                        <input type="text" class="form-control" name="bike_owner" value="">
+                        <input type="text" class="form-control" name="owner" value="">
                       </div>
                     </div>
                     <div class="form-group">
@@ -52,7 +55,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text"><i class="bi bi-twitter"></i></span>
                         </div>
-                        <input type="text" class="form-control" name="bike_status" value="">
+                        <input type="text" class="form-control" name="status" value="">
                       </div>
                     </div>
                     <div class="form-group col-6">
@@ -68,7 +71,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text"><i class="bi bi-file"></i></span>
                         </div>
-                        <input type="text" class="form-control" name="motif" value="">
+                        <input type="text" class="form-control" name="approved_motif" value="">
                       </div>
                     </div>
 

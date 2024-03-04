@@ -31,6 +31,26 @@
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
+
+    <link rel="icon" href="uploads/1646067360_logo%20BSSC%20Ltd.png" />
+    <!-- Favicons -->
+    <!-- <link href="assets/img/favicon.png" rel="icon"> -->
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="/backend/assets/css/style.css" rel="stylesheet">
@@ -63,6 +83,9 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<?php
+include('./dashboard/navbar.php');
+?>
 
 <body>
 
@@ -72,7 +95,10 @@
             <aside id="sidebar" class="sidebar">
 
                 <div class="sidebar-nav" id="sidebar-nav">
-
+                    <a href="https://igare.rw/admin" class="brand-link text-sm">
+                        <img src="https://igare.rw/uploads/1646067360_logo BSSC Ltd.png" alt="Store Logo" class="brand-image img-circle elevation-3" style="opacity: .8;width: 2.5rem;height: 2.5rem;max-height: unset">
+                        <span class="brand-text font-weight-light logo-span">Bicycle Ltd</span>
+                    </a>
                     <div class="nav-item">
                         <a class="nav-link collapsed" href="">
                             <i class="bi bi-grid"></i>
@@ -113,14 +139,14 @@
                         include 'dashboard/bikes.php';
                         break;
                     case 'edit':
-                        include 'dashboard/editModal.php';
+                        include 'dashboard/editBike.php';
                         break;
-                        case 'create':
-                            include 'dashboard/creatModal.php';
-                            break;
-                        case 'login':
-                            include 'dashboard/login.php';
-                            break;
+                    case 'create':
+                        include 'dashboard/createBike.php';
+                        break;
+                    case 'login':
+                        include 'dashboard/login.php';
+                        break;
                         // Add more cases for other pages
                     default:
                         include 'dashboard/home.php'; // Default content or home page

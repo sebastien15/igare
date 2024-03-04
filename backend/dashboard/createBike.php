@@ -1,4 +1,4 @@
-<?php include '../controllers/bikes.php'; ?>
+<?php include './controllers/bikes.php'; ?>
 
 
 <section class="content" id="editModal">
@@ -15,7 +15,7 @@
               <h5 class="card-title">Create Bike</h5>
             </div>
             <div class="card-body">
-              <form id="bike"  method="post" action="?create">
+              <form id="bike"  method="post" action="./controllers/bikes.php">
                 <div class="row">
                   <input type="hidden" name="id" value="">
                   <input type="hidden" name="agent_username" value="Christella">
@@ -97,53 +97,51 @@
           //         reader.readAsDataURL(input.files[0]);
           //     }
           // }
-          $(document).ready(function () {
-            $('.select')
-            $('#bike').submit(function (e) {
-              e.preventDefault();
-              start_loader();
-              $.ajax({
-                url: _base_url_ + "classes/Content.php?f=bike",
-                data: new FormData($(this)[0]),
-                cache: false,
-                contentType: false,
-                processData: false,
-                method: 'POST',
-                type: 'POST',
-                dataType: 'json',
-                error: err => {
-                  alert_toast("An error occured", 'error')
-                  console.log(err);
-                  end_loader();
-                },
-                success: function (resp) {
-                  if (resp != undefined) {
-                    if (resp.status == 'success') {
-                      location.href = _base_url_ + "admin/?page=bikes";
-                    } else {
-                      alert_toast("An error occured, " + resp.msg, 'error')
-                      console.log(resp);
-                      console.log("Status:" + resp.status)
-                    }
-                    end_loader();
-                  }
-                }
-              })
-            })
-            $('.summernote').summernote({
-              height: 200,
-              toolbar: [
-                ['style', ['style']],
-                ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
-                ['fontname', ['fontname']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ol', 'ul', 'paragraph', 'height']],
-                ['table', ['table']],
-                ['view', ['link', 'undo', 'redo', 'fullscreen', 'codeview', 'help']]
-              ]
-            })
-          })
+          // function start_loader() {
+          //     // Add your loading indicator logic here
+          //     console.log("Loading started");
+          // }
+
+          // function end_loader() {
+          //     // Add your loading indicator logic here
+          //     console.log("Loading ended");
+          // }
+
+          // $(document).ready(function () {
+          //   $('.select')
+          //   $('#bike').submit(function (e) {
+          //     e.preventDefault();
+          //     start_loader();
+          //     $.ajax({
+          //       url: _base_url_ + "classes/Content.php?f=bike",
+          //       data: new FormData($(this)[0]),
+          //       cache: false,
+          //       contentType: false,
+          //       processData: false,
+          //       method: 'POST',
+          //       type: 'POST',
+          //       dataType: 'json',
+          //       error: err => {
+          //         alert_toast("An error occured", 'error')
+          //         console.log(err);
+          //         end_loader();
+          //       },
+          //       success: function (resp) {
+          //         if (resp != undefined) {
+          //           if (resp.status == 'success') {
+          //             location.href = _base_url_ + "admin/?page=bikes";
+          //           } else {
+          //             alert_toast("An error occured, " + resp.msg, 'error')
+          //             console.log(resp);
+          //             console.log("Status:" + resp.status)
+          //           }
+          //           end_loader();
+          //         }
+          //       }
+          //     })
+          //   })
+            
+          // })
 
         </script>
       </div>

@@ -1,9 +1,9 @@
-<?php include '../controllers/bikes.php'; ?>
+<?php include './controllers/bikes.php'; ?>
 
 <main id="" class="main">
 
   <div class="pagetitle">
-    <h1>General Tables</h1>
+    <h1>Bikes</h1>
   </div><!-- End Page Title -->
 
   <section class="section">

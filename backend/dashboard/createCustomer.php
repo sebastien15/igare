@@ -1,4 +1,4 @@
-<?php include '../controllers/customers.php'; ?>
+<?php include './controllers/customers.php'; ?>
 
 
 <section class="content">
